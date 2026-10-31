@@ -17,7 +17,7 @@ from langchain_core.output_parsers import StrOutputParser
 # LANGCHAIN_TRACING_V2=true
 # LANGCHAIN_API_KEY=...
 # LANGCHAIN_PROJECT=pdf_rag_demo
-
+os.environ['LANGCHAIN_PROJECT']="rag-pdf-app"
 load_dotenv()
 
 PDF_PATH = "islr.pdf"  # change to your file

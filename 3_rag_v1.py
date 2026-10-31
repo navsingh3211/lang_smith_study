@@ -10,6 +10,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel, RunnablePassthrough, RunnableLambda
 from langchain_core.output_parsers import StrOutputParser
 
+os.environ['LANGCHAIN_PROJECT']="rag-pdf-app"
 load_dotenv()  # expects OPENAI_API_KEY in .env
 
 PDF_PATH = "islr.pdf"  # <-- change to your PDF filename
@@ -35,6 +36,7 @@ prompt = ChatPromptTemplate.from_messages([
 
 # 5) Chain
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+
 def format_docs(docs): return "\n\n".join(d.page_content for d in docs)
 
 parallel = RunnableParallel({
