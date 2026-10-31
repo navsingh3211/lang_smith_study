@@ -8,7 +8,9 @@ load_dotenv()
 # Simple one-line prompt
 prompt = PromptTemplate.from_template("{question}")
 
-model = ChatOpenAI()
+model = ChatOpenAI(model_name="gpt-5.6-luna", temperature=0,model_kwargs={
+        "reasoning_effort": "none"
+        })
 parser = StrOutputParser()
 
 # Chain: prompt → model → parser
