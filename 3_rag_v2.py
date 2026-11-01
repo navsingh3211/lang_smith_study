@@ -78,7 +78,7 @@ q = input("\nQ: ").strip()
 
 # Give the visible run name + tags/metadata so it’s easy to find:
 config = {
-    "run_name": "pdf_rag_query"
+    "run_name": "pdf_rag_v2"
 }
 
 ans = chain.invoke(q, config=config)
